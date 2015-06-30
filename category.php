@@ -9,9 +9,7 @@ get_header(); ?>
     -------------------------------------------------------------------------------------------------------------->
     <div class="sub-banner">
         <div class="bodywrap">
-            <div class="breadcrumb"><a href="index.html">
-                Home</a> > Page Layout
-            </div>
+            <?php if (function_exists('simtiful_breadcrumbs')) simtiful_breadcrumbs(); ?>
             <div class="search-top">
                 <?php get_search_form(); ?>
             </div>
@@ -43,6 +41,9 @@ get_header(); ?>
 
                     // End the loop.
                     endwhile;
+
+                    // Page navigation.
+                    simtiful_posts_nav_link();
                 endif;
 			     ?>
             </div>

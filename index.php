@@ -34,8 +34,16 @@ get_header(); ?>
                
             // End the loop.
             endwhile;
+
         ?>
         </div>
     </div> <!-- END bodywrap -->
+    
+    <div class="bodywrap home-pgn">
+        <?php 
+            // Page navigation.
+            simtiful_posts_nav_link(); 
+        ?>
+    </div>
 
 <?php get_footer(); ?>

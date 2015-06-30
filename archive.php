@@ -1,6 +1,6 @@
 <?php
 /**
- * Category Template
+ * Archive Template
  */
 
 get_header(); ?>
@@ -20,21 +20,25 @@ get_header(); ?>
     -------------------------------------------------------------------------------------------------------------->
     <div class="bodywrap main-content-wrap article-list">
         <div class="row group"> 
-            <div class="grid12">
+            <div class="grid9">
                 <?php if ( have_posts() ) : ?>
-                    <article>
-                        <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'simtiful' ), get_search_query() ); ?></h1>
-                    </article>
+                <article>
                     <?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+			
+                    // Show an optional term description.
+                    $term_description = term_description();
+                    if ( ! empty( $term_description ) ) :
+                        printf( '<div class="taxonomy-description">%s</div>', $term_description );
+                    endif;
+                ?>
+                </article>
+                <?php
                     // Start the loop.
-                    while ( have_posts() ) : the_post(); ?>
+                    while ( have_posts() ) : the_post();
 
-                        <?php
-                        /*
-                         * Run the loop for the search to output the results.
-                         * If you want to overload this in a child theme then include a file
-                         * called content-search.php and that will be used instead.
-                         */
+                        // Include the page content template.
                         get_template_part( 'content', 'simple' );
 
                     // End the loop.
@@ -42,13 +46,11 @@ get_header(); ?>
 
                     // Page navigation.
                     simtiful_posts_nav_link();
-
-                // If no content, include the "No posts found" template.
-                else :
-                    get_template_part( 'content', 'none' );
-
                 endif;
-                ?>
+			     ?>
+            </div>
+            <div class="grid3">
+                <?php get_sidebar(); ?>
             </div>
         </div>
     </div> <!-- END bodywrap -->
