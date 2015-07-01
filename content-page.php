@@ -2,7 +2,7 @@
 /**
  * The default template for displaying content
  *
- * Used for both single.php
+ * Used for both page.php
  */
 ?>
 
@@ -40,13 +40,6 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-	<?php
-		// Author bio.
-		if ( is_single() ) :
-			get_template_part( 'author-bio' );
-		endif;
-	?>
 
 	<footer class="entry-footer">
 		<?php 
