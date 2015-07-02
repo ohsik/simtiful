@@ -15,7 +15,7 @@ get_header(); ?>
             <div class="home-cta">
                 <h1><?php bloginfo('name'); ?></h1>
                 <p><?php bloginfo('description'); ?></p>
-                <p class="cta">Apply</p>
+                <p class="cta">Download</p>
             </div>
         </div>
     </div>
