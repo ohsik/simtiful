@@ -7,9 +7,12 @@
 * Design Concept
 [http://www.ohsikpark.com/simtiful-wordpress-blog-theme/](http://www.ohsikpark.com/simtiful-wordpress-blog-theme/)
 
-
-## v 1.0.1
+### v 1.0.1
 - Mobile navigation extra padding error fixed
 - webkit class added for input fields on iOS
 - Checkbox and radio button style on webkit
 - content-page.php added
+- Fixed Masonry position when page load
+
+### Design Prototype (HTML folder)
+HTML version of Simtiful. You can delete the entire HTML folder. It does not do anything with WordPress.
