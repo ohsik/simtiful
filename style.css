@@ -137,6 +137,28 @@ nav li a{
 #onav, .onav-btn{
     display: none;   
 }
+/* Sub menu only supports level 1 */
+.menu-item-has-children, 
+.page_item_has_children{
+    position: relative;
+}
+.sub-menu,
+.children{
+    display: none;
+    width: 320px;
+    background: #eee;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+.sub-menu li,
+.children li{
+    width: 100%;
+}
+.menu-item-has-children:hover > .sub-menu,
+.page_item_has_children:hover > .children{
+    display: block;
+}
 @media only screen and (max-width:768px){
     .onav-btn{
         display: block;
@@ -162,6 +184,13 @@ nav li a{
     }
     #onav:checked ~ nav{
         display: block;  
+    }
+    .sub-menu,
+    .children{
+        position: static;
+        width: 100%;
+        display: block;
+        margin: 0;
     }
 }
 /* Layout
@@ -192,7 +221,7 @@ header.header{
     padding: 30px 0;
 }
 .article-list article:first-child{
-    padding: 0px;
+    padding: 0;
 }
 .main-banner{
     background: url(img/main-banner.jpg) no-repeat center center; 
@@ -478,6 +507,7 @@ ul.page-numbers li {
 ------------------------------------------------------------*/
 input,
 input[type="search"],
+select,
 textarea{
     border: none;
     border-bottom: 1px solid #ccc;

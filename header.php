@@ -16,8 +16,9 @@
     
 <?php wp_head(); ?>
 
-<!-- Fav and touch icons -->
+<?php /* Favicon uncomment this to enable
 <link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/img/favicon.png">
+*/ ?>
 </head>
 
 <body <?php body_class(); ?>>
