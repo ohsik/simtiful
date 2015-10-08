@@ -16,3 +16,6 @@
 
 ### Design Prototype (HTML folder)
 HTML version of Simtiful. You can delete the entire HTML folder. It does not do anything with WordPress.
+
+### v 1.0.4
+- Live on WordPress.org https://wordpress.org/themes/simtiful/
