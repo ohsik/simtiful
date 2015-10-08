@@ -11,21 +11,24 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     
 <!--[if lt IE 9]>
-    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5shiv.min.js"></script>
 <![endif]-->
     
 <?php wp_head(); ?>
 
-<?php /* Favicon uncomment this to enable
-<link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/img/favicon.png">
-*/ ?>
 </head>
 
 <body <?php body_class(); ?>>
     <!-- Header
     -------------------------------------------------------------------------------------------------------------->
     <header class="header bodywrap">
-        <div class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/logo.png" /></a></div>
+        <div class="logo">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+            <?php if ( get_theme_mod( 'simtiful_logo' ) || get_theme_mod( 'simtiful_logo' ) != '' ) : ?>
+                <img src="<?php echo esc_url( get_theme_mod( 'simtiful_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+            <?php endif; ?>
+            </a>
+        </div>
         <div class="main-nav">
             <input type="checkbox" id="onav" />
             <label for="onav" class="onav-btn"></label>

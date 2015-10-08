@@ -4,10 +4,10 @@ Theme URI: http://wp.ohsikpark.com/simtiful/
 Author: Ohsik Park
 Author URI: http://www.ohsikpark.com/
 Description: Simtiful is a simeple full responsive WordPress theme designed for SIMPLICITY, USABILITY AND LEGIBILITY more info visit http://www.ohsikpark.com/simtiful-wordpress-blog-theme/
-Version: 1.0.1
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, blue, gray, white, light, two-columns, left-sidebar, responsive-layout, custom-background, custom-menu, editor-style, featured-images, post-formats, sticky-post
+Tags: black, blue, gray, white, light, two-columns, left-sidebar, responsive-layout, custom-background, custom-menu, editor-style, featured-images, sticky-post, one-column, translation-ready
 Text Domain: simtiful
 */
 
@@ -21,19 +21,6 @@ html, body{
 img, figure{
     max-width: 100%;
     height: auto;
-}
-.alignleft{
-    float: left;
-}
-.alignright{
-    float: right;
-}
-.aligncenter {
-	display: block;
-	margin-right: auto;
-	margin-left: auto;
-}
-.sticky{
 }
 /*Responsive Grid System Setup
 ------------------------------------------------------------*/
@@ -192,6 +179,35 @@ nav li a{
         display: block;
         margin: 0;
     }
+}
+/* WordPress Style
+------------------------------------------------------------*/
+.alignleft{
+    float: left;
+    padding: 20px 20px 20px 0;
+}
+.alignright{
+    float: right;
+    padding: 20px 0px 20px 20px;
+}
+.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+.sticky{
+}
+.gallery-item{
+    max-width: 33.33%;
+    display: inline-block;
+    padding: 1.79104477%;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+    margin: 0;
+}
+.gallery-item a{
+    border: none;
 }
 /* Layout
 ------------------------------------------------------------*/
@@ -519,6 +535,8 @@ textarea{
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 textarea{
     min-height: 120px;
@@ -596,5 +614,8 @@ button{
     footer nav li{
         width: auto;
         text-indent: 0;
+    }
+    article{
+        word-break: break-all;    
     }
 }

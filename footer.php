@@ -7,7 +7,7 @@
                     <?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'nav-menu', 'container' => '' ) ); ?>
                 </ul>
             </nav>
-            <p>&#169; 2015. All rights reserved.</p>
+            <p><?php echo wp_kses_post(get_theme_mod( 'copyright_textbox', 'Simtiful 2015 powered by WordPress.' )); ?></p>
         </div>
     </footer>
 

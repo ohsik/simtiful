@@ -23,7 +23,7 @@ get_header(); ?>
             <div class="grid9">
                 <?php if ( have_posts() ) : ?>
                 <article>
-                    <h1 class="page-title"><?php printf( __( '%s', 'simtiful' ), single_cat_title( '', false ) ); ?></h1>
+                    <h1 class="page-title"><?php single_cat_title(); ?></h1>
                 <?php
                     // Show an optional term description.
                     $term_description = term_description();

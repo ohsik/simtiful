@@ -16,14 +16,13 @@ function simtiful_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
-	) );
 	add_theme_support( 'custom-background', apply_filters( 'simtiful_custom_background_args', array(
 		'default-color'      => '#fff',
 		'default-attachment' => 'fixed',
 	) ) );
 	add_editor_style( array( 'css/editor-style.css', simtiful_fonts_url() ) );
+    //enable translation
+    load_theme_textdomain('simtiful', get_template_directory() . '/languages');
 }
 endif;
 add_action( 'after_setup_theme', 'simtiful_setup' );
@@ -143,6 +142,14 @@ function simtiful_entry_meta() {
 	}
     
     if ( 'post' == get_post_type() ) {
+        $categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'simtiful' ) );
+		if ( $categories_list && simtiful_categorized_blog() ) {
+			printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+				_x( 'Categories', 'Used before category names.', 'simtiful' ),
+				$categories_list
+			);
+		}
+        
 		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'simtiful' ) );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
@@ -172,7 +179,50 @@ function simtiful_entry_meta() {
 }
 endif;
 
+/**
+ * Determine whether blog/site has more than one category.
+ *
+ * @since Twenty Fifteen 1.0
+ *
+ * @return bool True of there is more than one category, false otherwise.
+ */
+function simtiful_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'simtiful_categories' ) ) ) {
+		// Create an array of all the categories that are attached to posts.
+		$all_the_cool_cats = get_categories( array(
+			'fields'     => 'ids',
+			'hide_empty' => 1,
 
+			// We only need to know if there is more than one category.
+			'number'     => 2,
+		) );
+
+		// Count the number of categories that are attached to the posts.
+		$all_the_cool_cats = count( $all_the_cool_cats );
+
+		set_transient( 'simtiful_categories', $all_the_cool_cats );
+	}
+
+	if ( $all_the_cool_cats > 1 ) {
+		// This blog has more than 1 category so simtiful_categorized_blog should return true.
+		return true;
+	} else {
+		// This blog has only 1 category so simtiful_categorized_blog should return false.
+		return false;
+	}
+}
+
+/**
+ * Flush out the transients used in {@see simtiful_categorized_blog()}.
+ *
+ * @since Twenty Fifteen 1.0
+ */
+function simtiful_category_transient_flusher() {
+	// Like, beat it. Dig?
+	delete_transient( 'simtiful_categories' );
+}
+add_action( 'edit_category', 'simtiful_category_transient_flusher' );
+add_action( 'save_post',     'simtiful_category_transient_flusher' );
 
 if ( ! function_exists( 'simtiful_post_thumbnail' ) ) :
 /**
@@ -249,6 +299,8 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 /*
  * WordPress Breadcrumbs
+ * This breadcrumb script is licensed under MIT, https://gist.github.com/Dimox/5654092
+ * Copyright (C) 2015 Dimox
 */
 function simtiful_breadcrumbs() {
 
@@ -422,7 +474,6 @@ function simtiful_breadcrumbs() {
 /*
  * Numbered Pagination
 */
-//----------------------------------------------------------------------------------
 if ( !function_exists( 'simtiful_posts_nav_link' ) ) {
 	
 	function simtiful_posts_nav_link() {
@@ -455,3 +506,8 @@ if ( !function_exists( 'simtiful_posts_nav_link' ) ) {
 	}
 	
 }
+
+/*
+ * Theme options
+*/
+require get_template_directory() . '/inc/customizer.php';

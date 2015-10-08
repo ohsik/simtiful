@@ -1,5 +1,8 @@
 # Simtiful
 ## Simtiful is a simeple full responsive WordPress theme designed for SIMPLICITY, USABILITY AND LEGIBILITY
+- Simtiful WordPress Theme, Copyright (C) 2015, Ohsik Park
+- Simtiful is distributed under the terms of the GNU GPL
+
 
 * Demo / More Info
 [http://wp.ohsikpark.com/simtiful/](http://wp.ohsikpark.com/simtiful/).
@@ -7,6 +10,10 @@
 * Design Concept
 [http://www.ohsikpark.com/simtiful-wordpress-blog-theme/](http://www.ohsikpark.com/simtiful-wordpress-blog-theme/)
 
+
+## v 1.0.2 to v 1.0.4
+- Changes for WP theme review
+- Theme options for logo and footer copyright text added
 
 ## v 1.0.1
 - Mobile navigation extra padding error fixed
@@ -21,3 +28,4 @@
 - normalize.css MIT License (github.com/necolas/normalize.css)
 - Images License: CC0 Public Domain (https://unsplash.com/license)
   https://download.unsplash.com/photo-1419242902214-272b3f66ee7a
+- Dimox Breadcrumbs MIT license (https://gist.github.com/Dimox/5654092)
