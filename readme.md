@@ -17,5 +17,8 @@
 ### v 1.0.4
 - Live on WordPress.org https://wordpress.org/themes/simtiful/
 
+### v 1.0.5
+- Added no post message in category.php
+
 ### Design Prototype (HTML folder)
 HTML version of Simtiful. You can delete the entire HTML folder. It does not do anything with WordPress.

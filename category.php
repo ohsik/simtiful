@@ -44,6 +44,11 @@ get_header(); ?>
 
                     // Page navigation.
                     simtiful_posts_nav_link();
+                
+                else :
+					// If no content, include the "No posts found" template.
+					get_template_part( 'content', 'none' );
+                
                 endif;
 			     ?>
             </div>

@@ -11,6 +11,9 @@
 [http://www.ohsikpark.com/simtiful-wordpress-blog-theme/](http://www.ohsikpark.com/simtiful-wordpress-blog-theme/)
 
 
+## v 1.0.5
+- Added no post message in category.php
+
 ## v 1.0.2 to v 1.0.4
 - Changes for WP theme review
 - Theme options for logo and footer copyright text added
