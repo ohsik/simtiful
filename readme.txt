@@ -14,6 +14,7 @@
 ## v 1.0.5
 - Added no post message in category.php
 - removed extra is_active_sidebar in sidebar.php
+- Breadcrumb warning fixed
 
 ## v 1.0.2 to v 1.0.4
 - Changes for WP theme review

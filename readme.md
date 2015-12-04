@@ -20,6 +20,7 @@
 ### v 1.0.5
 - Added no post message in category.php
 - removed extra is_active_sidebar in sidebar.php
+- Breadcrumb warning fixed
 
 ### Design Prototype (HTML folder)
 HTML version of Simtiful. You can delete the entire HTML folder. It does not do anything with WordPress.
