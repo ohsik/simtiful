@@ -4,7 +4,7 @@ Theme URI: http://wp.ohsikpark.com/simtiful/
 Author: Ohsik Park
 Author URI: http://www.ohsikpark.com/
 Description: Simtiful is a simeple full responsive WordPress theme designed for SIMPLICITY, USABILITY AND LEGIBILITY more info visit http://www.ohsikpark.com/simtiful-wordpress-blog-theme/
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, white, light, two-columns, left-sidebar, responsive-layout, custom-background, custom-menu, editor-style, featured-images, sticky-post, one-column, translation-ready
@@ -154,15 +154,30 @@ nav li a{
         cursor: pointer;
         display: inline-block;
         float: left;
-        padding: 10px;
+        padding: 18px 10px;
     }
-    .onav-btn:after{
-        content: "";
-        background: url('img/nav-b.png') no-repeat; 
-        width: 20px;
-        height: 20px;
-        float: right;         
-    }
+		.nav-icon,
+		.nav-icon:before,
+		.nav-icon:after{
+				float: left;
+				width: 1.8em;
+				height: 1px;
+				background: rgba(0, 0, 0, 0.7);
+				transition: all 0.1s ease-in-out;
+				-o-transition: all 0.1s ease-in-out;
+				-moz-transition: all 0.1s ease-in-out;
+				-webkit-transition: all 0.1s ease-in-out;
+		}
+		.nav-icon:before,
+		.nav-icon:after{
+				content: ' ';
+		}
+		.nav-icon:before{
+				margin-top: -5px;
+		}
+		.nav-icon:after{
+				margin-top: 5px;
+		}
     nav{
         display: none;
     }
@@ -172,6 +187,51 @@ nav li a{
     #onav:checked ~ nav{
         display: block;  
     }
+		/* Nav icon animation */
+		@keyframes rotateLeft {
+			0% {
+				transform: rotate(0deg);
+				-o-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-webkit-transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-webkit-transform: rotate(-45deg);
+			}
+		}
+		@keyframes rotateRight {
+			0% {
+				transform: rotate(0deg);
+				-o-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-webkit-transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-webkit-transform: rotate(45deg);
+			}
+		}
+		#onav:checked ~ .onav-btn .nav-icon{
+				background: none;
+		}
+		#onav:checked ~ .onav-btn .nav-icon:before,
+		#onav:checked ~ .onav-btn .nav-icon:after{
+				margin-top: 0;
+				animation-duration: 0.3s;
+				animation-delay: 0.1s;
+				animation-fill-mode: forwards;
+		}
+		#onav:checked ~ .onav-btn .nav-icon:before{
+				animation-name: rotateLeft;
+		}
+		#onav:checked ~ .onav-btn .nav-icon:after{
+				animation-name: rotateRight;
+		}
     .sub-menu,
     .children{
         position: static;

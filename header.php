@@ -31,7 +31,7 @@
         </div>
         <div class="main-nav">
             <input type="checkbox" id="onav" />
-            <label for="onav" class="onav-btn"></label>
+            <label for="onav" class="onav-btn"><span class="nav-icon"></span></label>
             <nav>
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'container' => '' ) ); ?>
             </nav>

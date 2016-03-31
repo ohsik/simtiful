@@ -11,6 +11,10 @@
 [http://www.ohsikpark.com/simtiful-wordpress-blog-theme/](http://www.ohsikpark.com/simtiful-wordpress-blog-theme/)
 
 
+## v 1.0.6
+- CSS nav icon instead of image
+- Tested on WordPress 4.5
+
 ## v 1.0.5
 - Added no post message in category.php
 - removed extra is_active_sidebar in sidebar.php
