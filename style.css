@@ -4,7 +4,7 @@ Theme URI: http://wp.ohsikpark.com/simtiful/
 Author: Ohsik Park
 Author URI: http://www.ohsikpark.com/
 Description: Simtiful is a simeple full responsive WordPress theme designed for SIMPLICITY, USABILITY AND LEGIBILITY more info visit http://www.ohsikpark.com/simtiful-wordpress-blog-theme/
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, blue, gray, white, light, two-columns, left-sidebar, responsive-layout, custom-background, custom-menu, editor-style, featured-images, sticky-post, one-column, translation-ready
@@ -279,6 +279,7 @@ header.header{
     float: left;
     height: 28px;
     margin-top: 10px;
+		font-weight: bold;
 }
 .logo img{
     max-width: 100%;

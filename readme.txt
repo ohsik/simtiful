@@ -10,6 +10,8 @@
 * Design Concept
 [http://www.ohsikpark.com/simtiful-wordpress-blog-theme/](http://www.ohsikpark.com/simtiful-wordpress-blog-theme/)
 
+## v 1.0.7
+- Defalut text logo added
 
 ## v 1.0.6
 - CSS nav icon instead of image

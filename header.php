@@ -26,6 +26,8 @@
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
             <?php if ( get_theme_mod( 'simtiful_logo' ) || get_theme_mod( 'simtiful_logo' ) != '' ) : ?>
                 <img src="<?php echo esc_url( get_theme_mod( 'simtiful_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+						<?php else: ?>
+								<?php bloginfo('name'); ?>
             <?php endif; ?>
             </a>
         </div>
